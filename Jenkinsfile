@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         GITNAME = 'hansususu'
+        AWS_REGION = 'ap-northeast-2'
         GITMAIL = 'hansubin0039@gmail.com' 
         GITWEBADD = 'https://github.com/hansususu/nginx-test.git'
         GITSSHADD = 'git@github.com:hansususu/deployment'
