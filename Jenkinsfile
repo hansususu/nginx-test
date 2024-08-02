@@ -47,7 +47,7 @@ pipeline {
                 git credentialsId: GITCREDENTIAL, url: GITSSHADD, branch: 'main'
                 sh "git config --global user.email ${GITMAIL}"
                 sh "git config --global user.name ${GITNAME}"
-                sh "sed -i 's@${DOCKERHUB}:.*@${DOCKERHUB}:${currentBuild.number}@g' nginx.yml"
+                sh "sed -i 's@${DOCKERHUB}:.*@${ECR_REGISTRY}:${currentBuild.number}@g' nginx.yml"
 
                 sh "git add ."
                 sh "git branch -M main"
